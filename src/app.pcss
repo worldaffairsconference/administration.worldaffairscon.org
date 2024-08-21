@@ -1,0 +1,63 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+@import 'carbon-components-svelte/css/white.css';
+
+@tailwind utilities;
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	height: 100dvh;
+}
+
+body {
+	height: calc(100% - 3rem);
+}
+
+main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+li:has(+ .bx--switcher__item--divider) {
+	list-style: none;
+}
+
+.ag-root-wrapper .modified:not(:has(input[aria-label='Input Editor'])) {
+	background-color: #ffff99;
+}
+
+.ag-cell-custom-editor,
+.ag-cell-custom-renderer {
+	word-break: normal;
+	padding: 10px 0;
+
+	& * {
+		font-size: 1rem;
+		margin: 0;
+		padding: 0;
+		line-height: normal;
+	}
+
+	& ul,
+	ol {
+		padding: 0 0 0 30px;
+	}
+
+	& ul {
+		list-style: disc;
+	}
+
+	& ol {
+		list-style: decimal;
+	}
+}
+
+[contenteditable] {
+	outline: 0px solid transparent;
+}

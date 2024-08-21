@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+PRODID:-//World Affairs Conference//Schedule
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+<% _.forEach(events, event => {%>
+BEGIN:VEVENT
+DTSTART:${toICSDate(event.startTime)}
+DTEND:${toICSDate(event.endTime)}
+DTSTAMP:${toICSDate(new Date())}
+ORGANIZER;CN=World Affairs Conference:mailto:noreply@worldaffairscon.org
+UID:${event.id}@2024.schedule.worldaffairscon.org
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=FALSE;CN=${attendee.firstName} ${attendee.lastName}:mailto:${attendee.email}
+DESCRIPTION:${event.description}
+CREATED:${toICSDate(new Date())}
+LAST-MODIFIED:${toICSDate(new Date())}
+LOCATION:${event.location}
+SEQUENCE:${sequence}
+STATUS:CONFIRMED
+SUMMARY:${event.summary}
+END:VEVENT
+<%})%>
+END:VCALENDAR

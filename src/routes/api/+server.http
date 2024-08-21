@@ -1,0 +1,15 @@
+POST http://localhost:5173/ HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Cookie: auth_session=0vm0nz2wqisdb3v3eajyuv71e5lf5pynaqy7apf6
+
+{
+  "add": [
+    {
+      "table": "frequently_asked_questions",
+      "data": {
+        "test": "What is the meaning of life?"
+      }
+    }
+  ]
+}
